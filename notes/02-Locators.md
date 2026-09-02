@@ -146,3 +146,14 @@ Output:
 - `findElement()` returns a `WebElement`.
 - `findElements()` returns `List<WebElement>`.
 - `findElements()` is useful when working with multiple matching elements.
+
+# CSS Selector
+
+CSS - Cascading Style Sheets
+
+| CSS Selector Type           | Syntax                             |
+| --------------------------- | ---------------------------------- |
+| **Tag + ID**                | `tag#id`                           |
+| **Tag + Class**             | `tag.classname`                    |
+| **Tag + Attribute**         | `tag[attribute='value']`           |
+| **Tag + Class + Attribute** | `tag.classname[attribute="value"]` |
