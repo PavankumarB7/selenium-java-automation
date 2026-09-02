@@ -82,7 +82,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | -------------------------------------------------------------------- | ------------ |
 | Selenium Introduction & Environment Setup                            | ✅ Completed |
 | Selenium Locators — ID, Name, LinkText, PartialLinkText, Class & Tag | ✅ Completed |
-| Selenium Locators — CSS Selector                                     | ⏳ Upcoming  |
+| Selenium Locators — CSS Selector                                     | ✅ Completed |
 | Selenium Locators — XPath, XPath Functions, XPath Types              | ⏳ Upcoming  |
 | Selenium Locators — XPath Axes, SelectorsHub                         | ⏳ Upcoming  |
 | Selenium WebDriver Methods                                           | ⏳ Upcoming  |
