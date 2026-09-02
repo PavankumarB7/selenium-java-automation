@@ -24,6 +24,7 @@ selenium-java/
 │           └── locators/
 │               ├── Locators.java
 │               └── LocatorsDemoQA.java
+                └── CSSLocators.java
 │
 ├── notes/
 │   ├── setup.md
