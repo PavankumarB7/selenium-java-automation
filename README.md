@@ -24,7 +24,8 @@ selenium-java/
 │           └── locators/
 │               ├── Locators.java
 │               └── LocatorsDemoQA.java
-                └── CSSLocators.java
+                └── CSSLocatorsDemo.java
+                ├── XPathDemo.java
 │
 ├── notes/
 │   ├── setup.md
@@ -84,7 +85,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Selenium Introduction & Environment Setup                            | ✅ Completed |
 | Selenium Locators — ID, Name, LinkText, PartialLinkText, Class & Tag | ✅ Completed |
 | Selenium Locators — CSS Selector                                     | ✅ Completed |
-| Selenium Locators — XPath, XPath Functions, XPath Types              | ⏳ Upcoming  |
+| Selenium Locators — XPath, XPath Functions, XPath Types              | ✅ Completed |
 | Selenium Locators — XPath Axes, SelectorsHub                         | ⏳ Upcoming  |
 | Selenium WebDriver Methods                                           | ⏳ Upcoming  |
 | Selenium WebDriver Waiting Methods                                   | ⏳ Upcoming  |
