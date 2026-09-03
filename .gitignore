@@ -1,4 +1,5 @@
 target
 
 # Tutorial code for unavailable website
-src/test/java/locators/CSSLocatorsNop.java
+src/test/java/locators/CSSLocatorsDemoSite.java
+src/test/java/locators/XPathDemoSite.java
