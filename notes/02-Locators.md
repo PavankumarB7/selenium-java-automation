@@ -388,3 +388,416 @@ driver.findElement(By.xpath("//input[starts-with(@placeholder, 'Sea')]"))
 boolean status =
     driver.findElement(By.xpath("//div[@id='logo']/a/img")).isDisplayed();
 ```
+
+
+# XPath Axes
+
+XPath axes locate elements based on their **relationship with the current/context node**.
+
+## 1. Parent Axis
+
+### Theory
+`parent` selects the **immediate parent** of the current element.
+
+**Direction:** one level up.
+
+### Example
+
+```text
+Label
+└── Input ← current
+```
+
+```xpath
+//input/parent::label
+```
+
+Starting from `Input`, the XPath moves one level up to `Label`.
+
+### Selenium example
+
+```java
+driver.findElement(
+    By.xpath("//textarea[@name='my-textarea']/parent::label")
+);
+```
+
+**Remember:** Parent = immediate element above.
+
+---
+
+## 2. Child Axis
+
+### Theory
+`child` selects the **direct children** of the current element.
+
+**Direction:** one level down.
+
+### Example
+
+```text
+Label ← current
+├── Input
+└── Span
+```
+
+```xpath
+//label/child::input
+```
+
+Starting from `Label`, the XPath moves one level down and finds `Input`.
+
+### Using `*`
+
+```xpath
+//label/child::*
+```
+
+`*` means **any element**.
+
+Therefore, `child::*` means:
+
+> Select any direct child element.
+
+**Remember:** Child = directly below.
+
+---
+
+## 3. Descendant Axis
+
+### Theory
+`descendant` selects elements **anywhere below** the current element, at any depth.
+
+### Example
+
+```text
+Form
+└── Div
+    └── Section
+        └── Input
+```
+
+```xpath
+//form/descendant::input
+```
+
+`Input` is not a direct child of `Form`, but it is a descendant.
+
+### Child vs Descendant
+
+```text
+Form
+├── Input        ← child
+└── Div
+    └── Input    ← descendant
+```
+
+- Child = direct / one level down
+- Descendant = anywhere below / any depth
+
+---
+
+## 4. Ancestor Axis
+
+### Theory
+`ancestor` selects elements **above the current element at any level**.
+
+### Example
+
+```text
+Form
+└── Div
+    └── Section
+        └── Input ← current
+```
+
+```xpath
+//input/ancestor::form
+```
+
+Starting from `Input`, the XPath moves upward through its ancestors and finds `Form`.
+
+Ancestors are `Section`, `Div`, and `Form`.
+
+### Parent vs Ancestor
+
+- Parent = immediate element above
+- Ancestor = any element above
+
+---
+
+## 5. Following-Sibling Axis
+
+### Theory
+`following-sibling` selects elements that:
+
+1. Have the **same parent**
+2. Come **after** the current element
+
+### Example
+
+```text
+Div
+├── Username ← current
+├── Password
+└── Email
+```
+
+```xpath
+//input[@name='username']/following-sibling::input
+```
+
+`Password` and `Email` are following siblings of `Username`.
+
+**Remember:** Same parent + after.
+
+---
+
+## 6. Preceding-Sibling Axis
+
+### Theory
+`preceding-sibling` selects elements that:
+
+1. Have the **same parent**
+2. Come **before** the current element
+
+### Example
+
+```text
+Div
+├── Username
+├── Password
+└── Email ← current
+```
+
+```xpath
+//input[@name='email']/preceding-sibling::input
+```
+
+`Username` and `Password` are preceding siblings of `Email`.
+
+**Remember:** Same parent + before.
+
+---
+
+## 7. Following Axis
+
+### Theory
+`following` selects nodes that occur **later in document order**, outside the current node's subtree.
+
+They do not need to have the same parent.
+
+### Example
+
+```text
+Div
+├── Password label ← current
+└── ...
+
+Another Div
+└── Password input
+```
+
+```xpath
+//label[text()='Password']/following::input
+```
+
+The input occurs later in the document, so it can be selected using the `following` axis.
+
+### Following vs Following-Sibling
+
+- Following-sibling = same parent + after
+- Following = later in document, regardless of parent
+
+---
+
+## 8. Preceding Axis
+
+### Theory
+`preceding` selects nodes that occur **earlier in document order**, excluding ancestors.
+
+### Example
+
+```text
+Div
+├── Username label
+├── Username input
+└── ...
+
+Another Div
+├── Password label
+└── Password input ← current
+```
+
+```xpath
+//input[@name='password']/preceding::label
+```
+
+`Username label` occurs earlier in the document and is not an ancestor, so it belongs to the `preceding` axis.
+
+### Important
+
+Ancestors are excluded from `preceding`.
+
+```text
+Form
+└── Div
+    └── Input ← current
+```
+
+`Form` and `Div` are ancestors, so they are **not** returned by `preceding`.
+
+**Remember:** Earlier in document order + excluding ancestors.
+
+---
+
+## 9. Self Axis
+
+### Theory
+`self` selects the **current element itself**.
+
+It does not move.
+
+### Example
+
+```text
+Label ← current
+```
+
+```xpath
+//label/self::label
+```
+
+The XPath remains on the same `Label`.
+
+**Remember:** Self = current element.
+
+---
+
+# Quick Reference
+
+| Axis | Relationship |
+|---|---|
+| `parent` | Immediate parent — one level up |
+| `child` | Direct children — one level down |
+| `ancestor` | Any element above |
+| `descendant` | Any element below |
+| `following-sibling` | Same parent + after |
+| `preceding-sibling` | Same parent + before |
+| `following` | Later in document order, outside subtree |
+| `preceding` | Earlier in document order, excluding ancestors |
+| `self` | Current element itself |
+
+---
+
+# Important Comparisons
+
+### Parent vs Ancestor
+
+```text
+A
+└── B
+    └── C ← current
+```
+
+- Parent → `B`
+- Ancestors → `B`, `A`
+
+**Parent = immediate. Ancestor = any level above.**
+
+### Child vs Descendant
+
+```text
+A ← current
+├── B
+│   └── C
+└── D
+```
+
+- Children → `B`, `D`
+- Descendants → `B`, `C`, `D`
+
+**Child = direct only. Descendant = any depth.**
+
+### Following-Sibling vs Following
+
+- Following-sibling = same parent + after
+- Following = later in document order, regardless of parent
+
+### Preceding-Sibling vs Preceding
+
+- Preceding-sibling = same parent + before
+- Preceding = earlier in document order, excluding ancestors
+
+---
+
+# Simple Mental Model
+
+```text
+                 ancestor
+                    ↑
+                    |
+preceding ←       SELF       → following
+                    |
+                    ↓
+                descendant
+```
+
+Sibling axes add the **same-parent** condition:
+
+```text
+following-sibling → same parent + after
+preceding-sibling → same parent + before
+```
+
+Also:
+
+```text
+parent → one level up
+child  → one level down
+self   → stay on current element
+```
+
+---
+
+# Practical Selenium Pattern
+
+```java
+driver.findElement(
+    By.xpath("AXIS_EXPRESSION")
+);
+```
+
+Example:
+
+```java
+driver.findElement(
+    By.xpath("//textarea[@name='my-textarea']/parent::label")
+);
+```
+
+Process:
+
+1. Find the `textarea`.
+2. Treat it as the current node.
+3. Move to its parent.
+4. Select the parent if it is a `label`.
+
+## Locator Strategy Note
+
+XPath axes are one locator technique. Do not force an axis into every locator.
+
+Prefer a simple, stable locator when one is available:
+
+```xpath
+//input[@name='username']
+```
+
+Use an axis when the relationship helps identify the target:
+
+```xpath
+//textarea[@name='my-textarea']/parent::label
+```
+
+The goal is to understand the relationship and choose a stable locator.
+
