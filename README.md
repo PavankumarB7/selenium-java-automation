@@ -27,10 +27,16 @@ selenium-java/
                 └── CSSLocatorsDemo.java
                 ├── XPathDemo.java
                 ├── XPathAxesDemo.java
+            └── webdriver/
+                ├── GetMethodsDemo.java
+                ├── ConditionalMethods.java
+                ├── BrowserMethodsDemo.java
 │
 ├── notes/
-│   ├── setup.md
-│   └── locators.md
+    ├── Selenium_WebDriver_Introduction.md
+│   ├── Selenium-Setup.md
+│   ├── locators.md
+    ├── WebDriver_Methods.md
 │
 ├── pom.xml
 └── README.md
@@ -88,7 +94,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Selenium Locators — CSS Selector                                     | ✅ Completed |
 | Selenium Locators — XPath, XPath Functions, XPath Types              | ✅ Completed |
 | Selenium Locators — XPath Axes, SelectorsHub                         | ✅ Completed |
-| Selenium WebDriver Methods                                           | ⏳ Upcoming  |
+| Selenium WebDriver Methods                                           | ✅ Completed |
 | Selenium WebDriver Waiting Methods                                   | ⏳ Upcoming  |
 | Selenium WebDriver Methods — Browser & Navigation Commands           | ⏳ Upcoming  |
 | Handling Check Boxes & Different Types of Alerts                     | ⏳ Upcoming  |
