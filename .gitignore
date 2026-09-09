@@ -1,4 +1,5 @@
 target
+.vscode/settings.json
 
 # Tutorial code for unavailable website
 src/test/java/locators/CSSLocatorsDemoSite.java
