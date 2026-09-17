@@ -31,6 +31,9 @@ selenium-java/
                 ├── GetMethodsDemo.java
                 ├── ConditionalMethods.java
                 ├── BrowserMethodsDemo.java
+                ├── NavigationalCommands.java
+                ├── HandleBrowserWindows.java
+                ├── ClosingSpecificBrowserWindow.java
             └── waits/
                 ├── SleepCommand.java
                 ├── ImplicitWaitDemo.java
@@ -102,7 +105,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Selenium Locators — XPath Axes, SelectorsHub                         | ✅ Completed |
 | Selenium WebDriver Methods                                           | ✅ Completed |
 | Selenium WebDriver Waiting Methods                                   | ✅ Completed |
-| Selenium WebDriver Methods — Browser & Navigation Commands           | ⏳ Upcoming  |
+| Selenium WebDriver Methods — Browser & Navigation Commands           | ✅ Completed |
 | Handling Check Boxes & Different Types of Alerts                     | ⏳ Upcoming  |
 | Handling Frames, iFrames & Nested iFrames                            | ⏳ Upcoming  |
 | Handling Different Types of Drop-downs                               | ⏳ Upcoming  |
