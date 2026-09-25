@@ -23,8 +23,8 @@ selenium-java/
 │       └── java/
 │           └── locators/
 │               ├── Locators.java
-│               └── LocatorsDemoQA.java
-                └── CSSLocatorsDemo.java
+│               ├── LocatorsDemoQA.java
+                ├── CSSLocatorsDemo.java
                 ├── XPathDemo.java
                 ├── XPathAxesDemo.java
             └── webdriver/
@@ -39,8 +39,15 @@ selenium-java/
                 ├── ImplicitWaitDemo.java
                 ├── ExplicitWaitDemo.java
                 ├── FluentWaitDemo.java
+            └── web_element_handling/
+                ├── HandleCheckboxes.java
+            └── advanced_features/
+                ├── HandleAlerts.java
+                ├── HandleAlertsUsingExplicitWait.java
+                ├── HandleauthenticatedPopup.java
             └── assignments/
                 ├── NavigationalCommandsAssignment.java
+                ├── CheckboxAssignment.java
 │
 ├── notes/
     ├── Selenium_WebDriver_Introduction.md
@@ -48,6 +55,8 @@ selenium-java/
 │   ├── locators.md
     ├── WebDriver_Methods.md
     ├── Waiting_Strategies.md
+    ├── Web_Element_Handling.md
+    ├── Advanced_Features.md
 │
 ├── pom.xml
 └── README.md
@@ -108,7 +117,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Selenium WebDriver Methods                                           | ✅ Completed |
 | Selenium WebDriver Waiting Methods                                   | ✅ Completed |
 | Selenium WebDriver Methods — Browser & Navigation Commands           | ✅ Completed |
-| Handling Check Boxes & Different Types of Alerts                     | ⏳ Upcoming  |
+| Handling Check Boxes & Different Types of Alerts                     | ✅ Completed |
 | Handling Frames, iFrames & Nested iFrames                            | ⏳ Upcoming  |
 | Handling Different Types of Drop-downs                               | ⏳ Upcoming  |
 | Handling Auto-suggest Dropdown & Static Web Table                    | ⏳ Upcoming  |
