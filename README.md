@@ -39,6 +39,8 @@ selenium-java/
                 ├── ImplicitWaitDemo.java
                 ├── ExplicitWaitDemo.java
                 ├── FluentWaitDemo.java
+            └── assignments/
+                ├── NavigationalCommandsAssignment.java
 │
 ├── notes/
     ├── Selenium_WebDriver_Introduction.md
