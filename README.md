@@ -41,6 +41,7 @@ selenium-java/
                 ├── FluentWaitDemo.java
             └── web_element_handling/
                 ├── HandleCheckboxes.java
+                ├── Handleframes.java
             └── advanced_features/
                 ├── HandleAlerts.java
                 ├── HandleAlertsUsingExplicitWait.java
@@ -118,7 +119,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Selenium WebDriver Waiting Methods                                   | ✅ Completed |
 | Selenium WebDriver Methods — Browser & Navigation Commands           | ✅ Completed |
 | Handling Check Boxes & Different Types of Alerts                     | ✅ Completed |
-| Handling Frames, iFrames & Nested iFrames                            | ⏳ Upcoming  |
+| Handling Frames, iFrames & Nested iFrames                            | ✅ Completed |
 | Handling Different Types of Drop-downs                               | ⏳ Upcoming  |
 | Handling Auto-suggest Dropdown & Static Web Table                    | ⏳ Upcoming  |
 | Handling Dynamic Pagination Web Table                                | ⏳ Upcoming  |
