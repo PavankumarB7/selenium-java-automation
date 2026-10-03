@@ -108,3 +108,150 @@ When frame switching fails, check:
 - Whether the selected frame is actually the required frame
 
 Use temporary diagnostic code when necessary to determine what Selenium actually sees.
+
+## Dropdowns
+
+1. Select Dropdown
+2. Custom / Bootstrap Dropdown
+3. Hidden / Dynamic Dropdown
+
+## 1. Select Dropdown
+
+A **Select dropdown** uses the HTML `<select>` tag.
+
+Use Selenium's `Select` class:
+
+```java
+WebElement element = driver.findElement(By.xpath("select_xpath"));
+Select dropdown = new Select(element);
+```
+
+### Select an option
+
+```java
+dropdown.selectByVisibleText("India");
+dropdown.selectByValue("japan");
+dropdown.selectByIndex(3);
+```
+
+**Index starts from `0`.**
+
+### Get and count options
+
+```java
+List<WebElement> options = dropdown.getOptions();
+System.out.println(options.size());
+```
+
+### Print options
+
+```java
+for (WebElement option : options) {
+    System.out.println(option.getText());
+}
+```
+
+### Get selected option
+
+```java
+System.out.println(dropdown.getFirstSelectedOption().getText());
+```
+
+---
+
+## 2. Custom / Bootstrap Dropdown
+
+If the dropdown is **not** a `<select>` element, do **not** use `Select`.
+
+Typical approach:
+
+```text
+Click dropdown
+     ↓
+Locate option
+     ↓
+Click option
+```
+
+Example:
+
+```java
+driver.findElement(By.xpath("dropdown_xpath")).click();
+
+WebElement option = driver.findElement(
+    By.xpath("option_xpath")
+);
+
+option.click();
+```
+
+---
+
+## 3. Hidden / Dynamic Dropdown
+
+Some custom dropdowns display their options only after the dropdown is opened.
+
+```text
+Open dropdown
+      ↓
+Options appear dynamically
+      ↓
+Locate option
+      ↓
+Click option
+```
+
+### Important
+
+- These dropdowns may not show the option elements when the dropdown is closed.
+- Open the dropdown first, then inspect/locate the option.
+- Tools such as browser DevTools or SelectorsHub Debugger can help inspect temporary elements.
+- This is mainly an inspection/debugging technique, not a different Selenium API.
+
+## Selecting Multiple Options – Custom Dropdown
+
+If the custom dropdown closes after each selection, reopen it for each target.
+
+```java
+String[] targetOptions = {"Option1", "Option2"};
+
+for (String targetOption : targetOptions) {
+
+    driver.findElement(By.xpath("dropdown_xpath")).click();
+
+    driver.findElement(By.xpath(
+        "option_xpath_for_" + targetOption
+    )).click();
+}
+```
+
+`targetOption` contains **one array value at a time**.
+
+---
+
+## Select vs Custom Dropdown
+
+| Type                        | Selenium approach         |
+| --------------------------- | ------------------------- |
+| `<select>` dropdown         | `Select` class            |
+| Custom `div/ul/li` dropdown | Locate and click elements |
+
+### Key rule
+
+**Inspect the DOM first.**
+
+```text
+Is it <select>?
+   ├─ Yes → Select class
+   └─ No  → Custom dropdown → click + locate option + click
+```
+
+## Interview Quick Revision
+
+- `selectByVisibleText()` → select by displayed text
+- `selectByValue()` → select by `value` attribute
+- `selectByIndex()` → select by index
+- `getOptions()` → get all options
+- `getFirstSelectedOption()` → get selected option
+- `Select` class works with HTML `<select>` elements
+- Custom dropdowns require normal element locators/clicks
