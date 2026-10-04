@@ -255,3 +255,194 @@ Is it <select>?
 - `getFirstSelectedOption()` → get selected option
 - `Select` class works with HTML `<select>` elements
 - Custom dropdowns require normal element locators/clicks
+
+## Auto-Suggest Dropdown
+
+An **Auto-Suggest Dropdown** displays suggestions dynamically based on the text entered by the user.
+
+Typical flow:
+
+```text
+Enter text
+    ↓
+Suggestions appear dynamically
+    ↓
+Capture all suggestions
+    ↓
+Loop through suggestions
+    ↓
+Match required text
+    ↓
+Click the matching suggestion
+```
+
+### Key points
+
+- Auto-suggest results are **dynamic**.
+- Use `findElements()` when multiple suggestions need to be captured.
+- Store them in `List<WebElement>`.
+- Use a loop to check each suggestion.
+- `getText()` → reads the suggestion text.
+- `click()` → selects the required suggestion.
+- `break` → stops after finding the required suggestion.
+
+## Static Web Table
+
+A **Static Web Table** contains table data that is already present on the page.
+
+### Basic structure
+
+```text
+<table> → table
+<tr>    → row
+<th>    → header
+<td>    → data cell
+```
+
+### Rows and columns
+
+```text
+findElements(...).size()
+```
+
+- `<tr>` → count rows
+- `<th>` → count columns
+
+Use a table-specific XPath when the page contains multiple tables.
+
+### Specific cell
+
+```xpath
+//table[@name='BookTable']//tr[row]//td[column]
+```
+
+Example:
+
+```xpath
+//table[@name='BookTable']//tr[5]//td[1]
+```
+
+→ 5th row, 1st column
+
+### Complete table
+
+Use **nested loops**:
+
+```text
+Outer loop → rows
+Inner loop → columns
+```
+
+The row and column numbers are used to build the XPath dynamically.
+
+### Conditional data
+
+```text
+Read Author
+   ↓
+Check Author = "Mukesh"
+   ↓
+If yes → read BookName from same row
+```
+
+This is **conditional table data retrieval**.
+
+### Calculating table values
+
+```text
+Read value
+   ↓
+Convert String → int
+   ↓
+Perform calculation
+```
+
+```java
+Integer.parseInt(value);
+```
+
+---
+
+## 3. Column-wise Data
+
+To get all values from one column:
+
+```xpath
+//table[@name='BookTable']//tr/td[1]
+```
+
+→ all BookNames
+
+```xpath
+//table[@name='BookTable']//tr/td[2]   → Authors
+//table[@name='BookTable']//tr/td[3]   → Subjects
+//table[@name='BookTable']//tr/td[4]   → Prices
+```
+
+```text
+findElements()
+    ↓
+List<WebElement>
+    ↓
+loop
+```
+
+### Column-wise vs Complete Table
+
+```text
+One column  → single loop
+Whole table → nested loops
+```
+
+---
+
+## 4. Important Table XPath Patterns
+
+```xpath
+//table[@name='BookTable']//tr
+```
+
+→ all rows
+
+```xpath
+//table[@name='BookTable']//th
+```
+
+→ all headers
+
+```xpath
+//table[@name='BookTable']//tr[1]//th
+```
+
+→ headers from first row
+
+```xpath
+//table[@name='BookTable']//tr[5]//td[1]
+```
+
+→ specific cell
+
+```xpath
+//table[@name='BookTable']//tr/td[1]
+```
+
+→ all cells from first column
+
+---
+
+## 5. Interview Quick Revision
+
+- `<tr>` → row
+- `<th>` → header
+- `<td>` → data cell
+- `findElement()` → one element
+- `findElements()` → multiple elements
+- `.size()` → number of elements
+- Specific cell → row + column XPath
+- One column → single loop
+- Complete table → nested loops
+- Outer loop → rows
+- Inner loop → columns
+- Conditional retrieval → check one column, retrieve data from same row
+- `getText()` → read cell value
+- `Integer.parseInt()` → convert `String` to `int`
