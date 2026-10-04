@@ -42,6 +42,10 @@ selenium-java/
             └── web_element_handling/
                 ├── HandleCheckboxes.java
                 ├── Handleframes.java
+                ├── SelectDropDown.java
+                ├── BootstrapDropDown.java
+                ├── AutoSuggestDropDown.java
+                ├── HandleStaticTable.java
             └── advanced_features/
                 ├── HandleAlerts.java
                 ├── HandleAlertsUsingExplicitWait.java
@@ -49,6 +53,7 @@ selenium-java/
             └── assignments/
                 ├── NavigationalCommandsAssignment.java
                 ├── CheckboxAssignment.java
+                ├── SelectDropdownAssignmnet.java
 │
 ├── notes/
     ├── Selenium_WebDriver_Introduction.md
@@ -121,7 +126,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Handling Check Boxes & Different Types of Alerts                     | ✅ Completed |
 | Handling Frames, iFrames & Nested iFrames                            | ✅ Completed |
 | Handling Different Types of Drop-downs                               | ✅ Completed |
-| Handling Auto-suggest Dropdown & Static Web Table                    | ⏳ Upcoming  |
+| Handling Auto-suggest Dropdown & Static Web Table                    | ✅ Completed |
 | Handling Dynamic Pagination Web Table                                | ⏳ Upcoming  |
 | Handling Date Pickers                                                | ⏳ Upcoming  |
 | Mouse Actions — Action vs Actions                                    | ⏳ Upcoming  |
