@@ -46,6 +46,7 @@ selenium-java/
                 ├── BootstrapDropDown.java
                 ├── AutoSuggestDropDown.java
                 ├── HandleStaticTable.java
+                ├── HandleDynamicPaginationTable.java
             └── advanced_features/
                 ├── HandleAlerts.java
                 ├── HandleAlertsUsingExplicitWait.java
@@ -127,7 +128,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Handling Frames, iFrames & Nested iFrames                            | ✅ Completed |
 | Handling Different Types of Drop-downs                               | ✅ Completed |
 | Handling Auto-suggest Dropdown & Static Web Table                    | ✅ Completed |
-| Handling Dynamic Pagination Web Table                                | ⏳ Upcoming  |
+| Handling Dynamic Pagination Web Table                                | ✅ Completed |
 | Handling Date Pickers                                                | ⏳ Upcoming  |
 | Mouse Actions — Action vs Actions                                    | ⏳ Upcoming  |
 | Keyboard Actions, Sliders, Tabs & Windows                            | ⏳ Upcoming  |
