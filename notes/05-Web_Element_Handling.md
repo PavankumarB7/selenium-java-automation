@@ -446,3 +446,62 @@ Whole table → nested loops
 - Conditional retrieval → check one column, retrieve data from same row
 - `getText()` → read cell value
 - `Integer.parseInt()` → convert `String` to `int`
+
+# Dynamic Pagination Web Table
+
+A **Dynamic Pagination Web Table** displays table data across multiple pages.
+
+### Basic Flow
+
+```text
+Get total items
+      ↓
+Calculate total pages
+      ↓
+Read current page
+      ↓
+Click Next
+      ↓
+Repeat until last page
+```
+
+### Key Concepts
+
+- Read pagination information to get the **total number of items**.
+- Calculate the **total number of pages** using items per page.
+- `findElements()` → capture multiple rows.
+- `.size()` → get the number of rows.
+- Use **dynamic XPath** to access different rows and columns.
+- Outer loop → pages.
+- Inner loop → rows.
+- Click **Next** after processing each page.
+- Stop after the last page.
+
+### Dynamic XPath
+
+```text
+table → tbody → tr[row] → td[column]
+```
+
+This allows the same XPath pattern to access different rows and columns.
+
+### Important Logic
+
+```text
+Total items = 50
+Items per page = 5
+Total pages = 10
+```
+
+`Math.ceil()` is used when the last page may contain fewer records.
+
+### Interview Quick Revision
+
+- **Static table** → data is already present in the table.
+- **Dynamic pagination table** → data is processed page by page.
+- `findElements()` → multiple elements.
+- `.size()` → count.
+- Outer loop → pages.
+- Inner loop → rows.
+- Dynamic XPath → different rows/columns.
+- `Next` → move to the next page.
