@@ -55,6 +55,7 @@ selenium-java/
                 ├── NavigationalCommandsAssignment.java
                 ├── CheckboxAssignment.java
                 ├── SelectDropdownAssignmnet.java
+                ├── SelectDropdownAndStaticWebTableAssignment.java
 │
 ├── notes/
     ├── Selenium_WebDriver_Introduction.md
