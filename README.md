@@ -47,6 +47,7 @@ selenium-java/
                 ├── AutoSuggestDropDown.java
                 ├── HandleStaticTable.java
                 ├── HandleDynamicPaginationTable.java
+                ├── HandleDatePicker.java
             └── advanced_features/
                 ├── HandleAlerts.java
                 ├── HandleAlertsUsingExplicitWait.java
@@ -130,7 +131,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Handling Different Types of Drop-downs                               | ✅ Completed |
 | Handling Auto-suggest Dropdown & Static Web Table                    | ✅ Completed |
 | Handling Dynamic Pagination Web Table                                | ✅ Completed |
-| Handling Date Pickers                                                | ⏳ Upcoming  |
+| Handling Date Pickers                                                | ✅ Completed |
 | Mouse Actions — Action vs Actions                                    | ⏳ Upcoming  |
 | Keyboard Actions, Sliders, Tabs & Windows                            | ⏳ Upcoming  |
 | JavaScriptExecutor, Scrolling Pages & Upload Files                   | ⏳ Upcoming  |
