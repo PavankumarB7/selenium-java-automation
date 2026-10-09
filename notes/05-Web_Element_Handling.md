@@ -505,3 +505,67 @@ Total pages = 10
 - Inner loop → rows.
 - Dynamic XPath → different rows/columns.
 - `Next` → move to the next page.
+
+# Datepicker
+
+## Core Strategies
+
+1. **Direct Input (`sendKeys()`)**
+   - Check whether the input field is editable.
+   - If editable, enter the date in the format accepted by the application.
+   - Read-only inputs require interaction with the calendar instead.
+
+2. **Dropdown Selection (`Select` class)**
+   - Use when month and year are standard HTML `<select>` elements.
+   - Select the required month and year directly using `Select`.
+
+   ```java
+   new Select(element).selectByVisibleText("Oct");
+   ```
+
+3. **Calendar Navigation (Previous / Next)**
+   - Use when the required month/year must be reached through navigation arrow buttons.
+   - Read the displayed month and year in a while loop, compare them with the target, and click Previous or Next until they match.
+
+## Selecting the Date
+
+After reaching the required month and year, locate and click the required day.
+
+- **Using a list and loop (`findElements`):**
+  - Collect all date links using `findElements()`.
+  - Iterate through the list with a `for` loop, click the matching date text, and `break`.
+- **Using dynamic XPath:**
+  - Target the day directly by injecting the date string into the locator:
+
+    ```xpath
+    //table[@class='ui-datepicker-calendar']//a[text()='25']
+    ```
+
+Ensure the locator identifies the intended day in the correct calendar.
+
+## When a Loop Is Needed
+
+- **Month/year dropdowns:** Select the required option directly using `Select`; a loop is usually unnecessary.
+- **Previous/Next navigation:** Use a loop to repeat navigation until the target month and year are displayed.
+- **Date selection:** A loop can iterate through date links to find the required day; alternatively, use a dynamic XPath to locate it directly.
+
+**Key rule:** Inspect the UI and choose the approach based on the available controls.
+
+## Important Practical Points
+
+- **Inspect the DOM:** Identify the trigger input and calendar controls before coding.
+- **Input vs. popup:** Click the input to open the datepicker; the popup container is not usually the trigger.
+- **Frames:** Switch to the relevant iframe if the input is inside one.
+- **Adjacent-month dates:** Ensure the selected day belongs to the intended month when adjacent-month dates are displayed.
+- **Input and locators:** Use `sendKeys()` only if typing is supported. Prefer a unique, stable locator based on the actual DOM.
+- **Synchronization:** Wait for the required element state before interacting. ElementClickInterceptedException occurs when another element intercepts the click; waiting alone may not resolve an overlay or obstruction.
+
+## Interview Quick Revision
+
+- Editable input → `sendKeys()` may be suitable.
+- HTML month/year dropdowns → Selenium `Select` class.
+- Previous/Next navigation → compare current and target month/year; loop if repeated navigation is needed.
+- Date links → locate the target day and click it.
+- `findElements()` → collect multiple date elements.
+- Loop → repeat navigation or inspect date elements when required.
+- Always identify the correct trigger input and verify the selected date.
