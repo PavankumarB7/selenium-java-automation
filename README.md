@@ -48,6 +48,12 @@ selenium-java/
                 ├── HandleStaticTable.java
                 ├── HandleDynamicPaginationTable.java
                 ├── HandleDatePicker.java
+            └── actions/
+                ├── MouseHoverAction.java
+                ├── RightClickAction.java
+                ├── DoubleClickAction.java
+                ├── DragAndDropAction.java
+                ├── ActionsVsAction.java
             └── advanced_features/
                 ├── HandleAlerts.java
                 ├── HandleAlertsUsingExplicitWait.java
@@ -132,7 +138,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Handling Auto-suggest Dropdown & Static Web Table                    | ✅ Completed |
 | Handling Dynamic Pagination Web Table                                | ✅ Completed |
 | Handling Date Pickers                                                | ✅ Completed |
-| Mouse Actions — Action vs Actions                                    | ⏳ Upcoming  |
+| Mouse Actions — Action vs Actions                                    | ✅ Completed |
 | Keyboard Actions, Sliders, Tabs & Windows                            | ⏳ Upcoming  |
 | JavaScriptExecutor, Scrolling Pages & Upload Files                   | ⏳ Upcoming  |
 | Screenshots, Headless, SSL, Ad Block & Extensions                    | ⏳ Upcoming  |
