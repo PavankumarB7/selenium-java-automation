@@ -1,4 +1,4 @@
-package testng;
+package testng.basics;
 
 import java.time.Duration;
 
