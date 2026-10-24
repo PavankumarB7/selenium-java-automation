@@ -16,69 +16,86 @@ This repository contains topic-wise Selenium learning, practical implementations
 ## Project Structure
 
 ```text
-selenium-java/
-│
+
+selenium-java-automation/
+├── notes/
+│   ├── 00-Selenium_WebDriver_Introduction.md
+│   ├── 01-Selenium-Setup.md
+│   ├── 02-Locators.md
+│   ├── 03-WebDriver_Methods.md
+│   ├── 04-Waiting_Strategies.md
+│   ├── 05-Web_Element_Handling.md
+│   ├── 06-Advanced_Features.md
+│   ├── 07-Actions.md
+│   └── 08-TestNG.md
 ├── src/
 │   └── test/
 │       └── java/
-│           └── locators/
-│               ├── Locators.java
-│               ├── LocatorsDemoQA.java
-                ├── CSSLocatorsDemo.java
-                ├── XPathDemo.java
-                ├── XPathAxesDemo.java
-            └── webdriver/
-                ├── GetMethodsDemo.java
-                ├── ConditionalMethods.java
-                ├── BrowserMethodsDemo.java
-                ├── NavigationalCommands.java
-                ├── HandleBrowserWindows.java
-                ├── ClosingSpecificBrowserWindow.java
-            └── waits/
-                ├── SleepCommand.java
-                ├── ImplicitWaitDemo.java
-                ├── ExplicitWaitDemo.java
-                ├── FluentWaitDemo.java
-            └── web_element_handling/
-                ├── HandleCheckboxes.java
-                ├── Handleframes.java
-                ├── SelectDropDown.java
-                ├── BootstrapDropDown.java
-                ├── AutoSuggestDropDown.java
-                ├── HandleStaticTable.java
-                ├── HandleDynamicPaginationTable.java
-                ├── HandleDatePicker.java
-            └── actions/
-                ├── MouseHoverAction.java
-                ├── RightClickAction.java
-                ├── DoubleClickAction.java
-                ├── DragAndDropAction.java
-                ├── ActionsVsAction.java
-                ├── SliderDemo.java
-                ├── KeyboardActions.java
-                ├── OpenTheLinkInNewTab.java
-                ├── TabsAndWindows.java
-            └── advanced_features/
-                ├── HandleAlerts.java
-                ├── HandleAlertsUsingExplicitWait.java
-                ├── HandleauthenticatedPopup.java
-            └── assignments/
-                ├── NavigationalCommandsAssignment.java
-                ├── CheckboxAssignment.java
-                ├── SelectDropdownAssignmnet.java
-                ├── SelectDropdownAndStaticWebTableAssignment.java
-│
-├── notes/
-    ├── Selenium_WebDriver_Introduction.md
-│   ├── Selenium-Setup.md
-│   ├── locators.md
-    ├── WebDriver_Methods.md
-    ├── Waiting_Strategies.md
-    ├── Web_Element_Handling.md
-    ├── Advanced_Features.md
-│
+│           ├── locators/
+│           │   ├── Locators.java
+│           │   ├── LocatorsDemoQA.java
+│           │   ├── CSSLocatorsDemo.java
+│           │   ├── XPathDemo.java
+│           │   └── XPathAxesDemo.java
+│           ├── webdriver/
+│           │   ├── GetMethodsDemo.java
+│           │   ├── ConditionalMethods.java
+│           │   ├── BrowserMethodsDemo.java
+│           │   ├── NavigationalCommands.java
+│           │   ├── HandleBrowserWindows.java
+│           │   └── ClosingSpecificBrowserWindow.java
+│           ├── waits/
+│           │   ├── SleepCommand.java
+│           │   ├── ImplicitWaitDemo.java
+│           │   ├── ExplicitWaitDemo.java
+│           │   └── FluentWaitDemo.java
+│           ├── web_element_handling/
+│           │   ├── HandleCheckboxes.java
+│           │   ├── Handleframes.java
+│           │   ├── SelectDropDown.java
+│           │   ├── BootstrapDropDown.java
+│           │   ├── AutoSuggestDropDown.java
+│           │   ├── HandleStaticTable.java
+│           │   ├── HandleDynamicPaginationTable.java
+│           │   └── HandleDatePicker.java
+│           ├── actions/
+│           │   ├── MouseHoverAction.java
+│           │   ├── RightClickAction.java
+│           │   ├── DoubleClickAction.java
+│           │   ├── DragAndDropAction.java
+│           │   ├── ActionsVsAction.java
+│           │   ├── SliderDemo.java
+│           │   ├── KeyboardActions.java
+│           │   ├── OpenTheLinkInNewTab.java
+│           │   └── TabsAndWindows.java
+│           ├── advanced_features/
+│           │   ├── HandleAlerts.java
+│           │   ├── HandleAlertsUsingExplicitWait.java
+│           │   └── HandleauthenticatedPopup.java
+│           ├── testng/
+│           │   ├── basics/
+│           │   │   ├── TestNGBasics.java
+│           │   │   └── OrangeHRMTest.java
+│           │   ├── annotations/
+│           │   │   ├── BeforeAfterMethodDemo.java
+│           │   │   ├── BeforeAfterClassDemo.java
+│           │   │   ├── BeforeAfterTestDemo.java
+│           │   │   ├── BeforeAfterSuiteDemo.java
+│           │   │   └── AllAnnotationsDemo.java
+│           │   └── assertions/
+│           │       ├── AssertionsDemo.java
+│           │       ├── HardAssertionsDemo.java
+│           │       └── HardVsSoftAssertions.java
+│           └── assignments/
+│               ├── NavigationalCommandsAssignment.java
+│               ├── CheckboxAssignment.java
+│               ├── SelectDropdownAssignment.java
+│               └── SelectDropdownAndStaticWebTableAssignment.java
 ├── pom.xml
-└── README.md
+├── README.md
+├── testng.xml
+└── testng-annotations.xml
+
 ```
 
 ## Topics Covered
@@ -126,8 +143,8 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 
 ## Selenium Learning Progress
 
-| Topic                                                                | Status       |
-| -------------------------------------------------------------------- | ------------ |
+| Topic                                                                | Status      |
+|----------------------------------------------------------------------|-------------|
 | Selenium Introduction & Environment Setup                            | ✅ Completed |
 | Selenium Locators — ID, Name, LinkText, PartialLinkText, Class & Tag | ✅ Completed |
 | Selenium Locators — CSS Selector                                     | ✅ Completed |
@@ -149,6 +166,9 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Handling Broken Links, SVG Elements & Shadow DOM                     | ⏳ Upcoming  |
 | Data Driven Testing — Part 1                                         | ⏳ Upcoming  |
 | Data Driven Testing — Part 2                                         | ⏳ Upcoming  |
+| TestNG — Introduction & Environment Setup                            | ✅ Completed |
+| TestNG — Annotations & Assertions                                    | ✅ Completed |
+
 
 ## How to Run
 
