@@ -179,3 +179,93 @@ Important points:
 | Stops the test method when an assertion fails. | Continues the test method after an assertion fails. |
 | Uses `Assert` methods.                         | Uses a `SoftAssert` object.                         |
 | Does not require `assertAll()`.                | Requires `assertAll()` to report failures.          |
+
+
+Dependency Methods and Grouping
+
+## 1. TestNG Dependency Methods
+
+**Purpose:** To control test execution based on the success or failure of another test method.
+
+### Key concepts
+
+- `dependsOnMethods` specifies which test method(s) must pass before the dependent test can execute.
+- `priority` controls the intended execution order of test methods.
+- A test can depend on one method or multiple methods.
+- If a required dependency fails, the dependent test is skipped.
+- A test can still execute if its own dependencies pass, even if an unrelated test fails.
+
+### Example from practice
+
+| Test method        | Dependency            | Result  |
+|--------------------|-----------------------|---------|
+| `openApp()`        | None                  | Passed  |
+| `login()`          | `openApp()`           | Passed  |
+| `search()`         | `login()`             | Failed  |
+| `advancedSearch()` | `login()`, `search()` | Skipped |
+| `logout()`         | `login()`             | Passed  |
+
+In this example, `search()` fails because its assertion evaluates to false. Therefore, `advancedSearch()` is skipped because it depends on both `login()` and `search()`. However, `logout()` executes because its only dependency, `login()`, passed.
+
+### Important points
+
+- **Passed:** The test executed successfully.
+- **Failed:** The test executed, but an assertion or another error caused failure.
+- **Skipped:** The test did not execute because a required dependency was not satisfied.
+- `priority` and `dependsOnMethods` serve different purposes: priority controls ordering, while dependencies define prerequisites.
+
+### Framework usage
+
+Dependency methods are useful when a test genuinely requires another test to succeed first. However, tests should ideally be independent. For example, a login test and an employee-search test can often use separate setup methods rather than relying on the login test itself.
+
+---
+
+## 2. TestNG Grouping
+
+**Purpose:** To organize test methods into categories and selectively execute them.
+
+### Groups used in practice
+
+| Group        | Practice methods                    |
+|--------------|-------------------------------------|
+| `sanity`     | Login methods and payment methods   |
+| `regression` | Sign-up methods and payment methods |
+| `functional` | Payment methods                     |
+
+A single test method can belong to multiple groups. For example, the payment tests belong to `sanity`, `regression`, and `functional`.
+
+### Important points
+
+- Groups are assigned using the `groups` attribute of `@Test`.
+- Groups can be selected through the TestNG XML configuration.
+- `<include>` specifies which groups to execute.
+- `<exclude>` specifies which groups to omit.
+- A group can contain test methods from multiple classes.
+- Grouping helps organize test execution without needing to run every test method.
+
+### XML configuration from practice
+
+The grouping XML includes the `functional` group and lists three classes:
+
+- `LoginTests`
+- `SignUpTests`
+- `PaymentTests`
+
+Only methods belonging to the included `functional` group are selected for execution. In this example, the payment tests are the only methods assigned to that group.
+
+The regression exclusion is commented out, so it is inactive.
+
+---
+
+## 3. Dependency Methods vs Grouping
+
+| Feature          | Dependency methods                                | Grouping                               |
+|------------------|---------------------------------------------------|----------------------------------------|
+| Main purpose     | Define test prerequisites                         | Categorize tests                       |
+| Controls         | Whether a dependent test can execute              | Which categories of tests are selected |
+| Example          | Run advanced search only if login and search pass | Run only smoke or regression tests     |
+| Configured using | `dependsOnMethods`                                | `groups` and TestNG XML                |
+
+
+
+
