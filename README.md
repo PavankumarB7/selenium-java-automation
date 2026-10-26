@@ -82,10 +82,16 @@ selenium-java-automation/
 │           │   │   ├── BeforeAfterTestDemo.java
 │           │   │   ├── BeforeAfterSuiteDemo.java
 │           │   │   └── AllAnnotationsDemo.java
-│           │   └── assertions/
-│           │       ├── AssertionsDemo.java
-│           │       ├── HardAssertionsDemo.java
-│           │       └── HardVsSoftAssertions.java
+│           │   ├── assertions/
+│           │   │   ├── AssertionsDemo.java
+│           │   │   ├── HardAssertionsDemo.java
+│           │   │   └── HardVsSoftAssertions.java
+│           │   ├── dependency_methods/
+│           │   │   └── DependencyMethodsDemo.java
+│           │   ├── grouping/
+│           │   │   ├── LoginTests.java
+│           │   │   ├── SignUpTests.java
+│           │   │   └── PaymentTests.java
 │           └── assignments/
 │               ├── NavigationalCommandsAssignment.java
 │               ├── CheckboxAssignment.java
@@ -94,7 +100,8 @@ selenium-java-automation/
 ├── pom.xml
 ├── README.md
 ├── testng.xml
-└── testng-annotations.xml
+├── testng-annotations.xml
+└── testng-grouping.xml
 
 ```
 
@@ -168,6 +175,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | Data Driven Testing — Part 2                                         | ⏳ Upcoming  |
 | TestNG — Introduction & Environment Setup                            | ✅ Completed |
 | TestNG — Annotations & Assertions                                    | ✅ Completed |
+| TestNG — Dependency Methods & Grouping                               | ✅ Completed |
 
 
 ## How to Run
