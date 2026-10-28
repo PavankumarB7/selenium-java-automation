@@ -27,7 +27,8 @@ selenium-java-automation/
 │   ├── 05-Web_Element_Handling.md
 │   ├── 06-Advanced_Features.md
 │   ├── 07-Actions.md
-│   └── 08-TestNG.md
+│   ├── 08-TestNG.md
+│   └── 09-POM.md
 ├── src/
 │   └── test/
 │       └── java/
@@ -92,6 +93,10 @@ selenium-java-automation/
 │           │   │   ├── LoginTests.java
 │           │   │   ├── SignUpTests.java
 │           │   │   └── PaymentTests.java
+│           ├── pom/
+│           │   ├── LoginPage.java
+│           │   ├── LoginPageUsingPageFactory.java
+│           │   └── LoginTest.java   
 │           └── assignments/
 │               ├── NavigationalCommandsAssignment.java
 │               ├── CheckboxAssignment.java
@@ -176,6 +181,7 @@ Detailed topic-wise notes are maintained in the `notes` folder.
 | TestNG — Introduction & Environment Setup                            | ✅ Completed |
 | TestNG — Annotations & Assertions                                    | ✅ Completed |
 | TestNG — Dependency Methods & Grouping                               | ✅ Completed |
+| POM - Page Object Model                                              | ✅ Completed |
 
 
 ## How to Run
